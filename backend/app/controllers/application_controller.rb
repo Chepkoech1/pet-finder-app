@@ -10,10 +10,50 @@ class ApplicationController < Sinatra::Base
     { name: 'Coco', species: 'bird', breed: 'Parrot', age: 4 }
 
   ]
+
   
   # Add your routes here
+  # route to retrieve all pets
   get "/" do
-    { message: "Good luck with your project!" }.to_json
+    PETS.to_json
   end
 
+  # Route to retrieve a specific pet by name
+  get '/pets/:name' do
+    pet = PETS.find { |p| p[:name] == params[:name] }
+    if pet
+      pet.to_json
+    else
+      { message: "Pet not found" }.to_json
+    end
+  end
+  # route to add new pet
+  post '/pets' do
+    pet = JSON.parse(request.body.read)
+    PETS << pet
+    pet.to_json
+  end
+  # Route to update pet information
+  put '/pets/:name' do
+    pet = PETS.find { |p| p[:name] == params[:name] }
+    if pet
+      updated_pet = JSON.parse(request.body.read)
+      pet.update(updated_pet)
+      pet.to_json
+    else
+      { message: "Pet not found" }.to_json
+    end
+  end
+  # route to delete a pet
+  delete '/pets/:name' do
+    pet = PETS.find { |p| p[:name] == params[:name] }
+    if pet
+      PETS.delete(pet)
+      { message: "Pet deleted" }.to_json
+    else
+      { message: "Pet not found" }.to_json
+    end
+  end
 end
+
+
