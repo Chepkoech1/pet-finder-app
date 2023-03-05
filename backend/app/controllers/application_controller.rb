@@ -1,5 +1,7 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
+  
+  # Add your routes here
   enable :sessions
 
   # Register
@@ -101,3 +103,6 @@ class ApplicationController < Sinatra::Base
     end
   end
 end
+
+
+
