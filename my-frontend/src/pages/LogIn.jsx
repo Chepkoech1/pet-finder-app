@@ -7,15 +7,15 @@ const LogIn = () => {
 
   const handleLogIn = (e)=> {
     e.preventDefault();
-    // fetch('/logIn', {
-    //     method: "POST",
-    //     body: JSON.stringify(details),
-    //     headers: {
-    //         "Content-Type": "Application/json"
-    //     }
-    // })
-    // .then(res => res.json())
-    // .then(res => console.log(res))
+    fetch('/logIn', {
+        method: "POST",
+        body: JSON.stringify(details),
+        headers: {
+            "Content-Type": "Application/json"
+        }
+    })
+    .then(res => res.json())
+    .then(res => console.log(res))
 
     console.log("data submited")
   }

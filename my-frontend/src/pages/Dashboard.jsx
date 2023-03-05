@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState } from "react";
 
 const Dashboard = () => {
@@ -126,16 +126,16 @@ onChange={(event) => setSearchTerm(event.target.value)}
 />
   )}
 
-  export default Dashboard
+  
     
-=======
-import React from 'react'
 
-const Dashboard = () => {
-  return (
-    <div>Dashboard</div>
-  )
-}
+// import React from 'react'
 
-export default Dashboard
->>>>>>> 18ef7cfa5f1197bc769ddd494f9040939a1efbab
+// const Dashboard = () => {
+//   return (
+//     <div>Dashboard</div>
+//   )
+// }
+
+ export default Dashboard
+

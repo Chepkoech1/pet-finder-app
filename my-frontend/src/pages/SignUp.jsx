@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState } from 'react';
 
 const SignUp = () => {
@@ -43,14 +43,4 @@ const SignUp = () => {
 };
 
 export default SignUp;
-=======
-import React from 'react'
 
-const SignUp = () => {
-  return (
-    <div>SignUp</div>
-  )
-}
-
-export default SignUp
->>>>>>> 18ef7cfa5f1197bc769ddd494f9040939a1efbab
