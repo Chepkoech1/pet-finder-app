@@ -17,12 +17,8 @@ function LandingPage() {
       <div>
         {/* Other design */}
         <h1>Thank you for visiting our website</h1>
-        <p className="paragraph">
-          We are excited to have you here. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Sed ut ultrices odio. Donec posuere
-          dapibus erat, eu convallis elit tempor vitae. Vestibulum vestibulum
-          nunc sed tristique facilisis.
-        </p>
+       
+        
       </div>
     </div>
   );

@@ -1,57 +1,68 @@
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
-import React, { useState } from 'react';
-import SignUp from SignUp
-const SignUp = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
- const [username, setUsername] = useState('');
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Do something with email and password, e.g. send them to the server
-    console.log(`Email: ${email}, Password: ${password}`);
-    // Reset form fields
-    setEmail('');
-    setPassword('');
-    setUsername('');
+export default function SignUp() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+
+  const history = useHistory();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const resp = await fetch("https://pet-finder-q9h3.onrender.com/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+        username,
+      }),
+    });
+
+    const data = await resp.json();
+
+    if (data.message) {
+      setMessage(data.message);
+      setError("");
+      history.push("/login");
+    } else {
+      setMessage("");
+      setError(data.error);
+    }
   };
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-  
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
   return (
-    <div className = "signup-container">
-      <h2>Sign Up</h2>
+    <div className="card " style={{display:"flex" , flexDirection:"column" , margin: "4em"}}>
       <form onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input type="username" value={username} onChange={handleUsernameChange} required>
-
-          </input>
-        </label>
-        <label>
-          Email:
-          <input type="email" value={email} onChange={handleEmailChange} required />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input type="password" value={password} onChange={handlePasswordChange} required />
-        </label>
-        <br />
+        <label>USERNAME:</label>
+        <input
+          placeholder="Enter fullname"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <label>EMAIL:</label>
+        <input
+          placeholder="Enter Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <label>PASSWORD:</label>
+        <input
+          placeholder="Enter password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <button type="submit">Sign Up</button>
       </form>
+      {message && <p style={{ color: "green" }}>{message}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
-};
-
-export default SignUp;
-
-
+}

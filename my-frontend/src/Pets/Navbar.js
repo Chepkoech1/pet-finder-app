@@ -26,10 +26,12 @@
 //   );
 // }
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 
 export default function NavBar() {
   const [petName, setPetName] = useState("");
   const [petType, setPetType] = useState("");
+//   const history = useHistory()
 
   const handlePetSubmit = (event) => {
     event.preventDefault();
@@ -45,7 +47,7 @@ export default function NavBar() {
             Navbar
           </a>
 
-          <form className="d-flex" role="search">
+          {/* <form className="d-flex" role="search">
             <input
               className="form-control me-2"
               type="search"
@@ -55,8 +57,8 @@ export default function NavBar() {
             <button className="btn btn-outline-success" type="submit">
               Search
             </button>
-          </form>
-
+          </form> */}
+          
           <form className="d-flex" onSubmit={handlePetSubmit}>
             <input
               className="form-control me-2"
@@ -75,6 +77,7 @@ export default function NavBar() {
             <button className="btn btn-outline-primary" type="submit">
               Add Pet
             </button>
+            
           </form>
         </div>
       </nav>
