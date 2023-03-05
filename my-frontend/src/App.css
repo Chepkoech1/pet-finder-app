@@ -172,7 +172,6 @@ font-weight: 400;
        margin-top: 2em;       
  }
  
- 
  .container{
   font-family: "Times New Roman", Times, serif;
   display: grid;
@@ -180,3 +179,75 @@ font-weight: 400;
   gap: 0px;
   justify-content: space-between;
  }
+ /* .landingpagebtn{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-top: 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.34) 0px 3px 8px;
+  box-sizing: border-box;
+  padding:0em 2em;
+  padding-bottom: 2em;
+  position: fixed;
+  align-items: flex-end;
+  align-content: flex-end;
+  background-image: ;
+  
+ 
+}
+.btn-2{
+    margin-right: 2em;
+} */
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url(/src/pexels-sam-lion-5732461.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.landing-page-btn {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+ 
+}
+
+.btn-1, .btn-2 {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+}
+
+.btn-1:hover, .btn-2:hover {
+  background-color: #2980b9;
+ 
+
+}
+
+.landing-page-content {
+  text-align: center;
+  color: #fff;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Add other styles as needed */

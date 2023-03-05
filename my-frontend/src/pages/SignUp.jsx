@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-
+import SignUp from SignUp
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -33,7 +33,7 @@ const SignUp = () => {
         <label>
           Username:
           <input type="username" value={username} onChange={handleUsernameChange} required>
-            
+
           </input>
         </label>
         <label>
