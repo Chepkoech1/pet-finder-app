@@ -1,95 +1,165 @@
-*{
+.pets {
+  height: 40em;
+  width: 100%;
+  /* background-color: aqua; */
+  display: grid;
+  padding: 3em;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  gap: 2em;
+  grid-template-columns: auto auto auto auto;
 }
-#root{
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
+
+.individual_pet:hover {
+  transform: translate(0px, -5px);
+  box-shadow: rgba(0, 0, 0, 0.54) 0px 3px 12px;
 }
-/* Log In */
-.logIn{
-  height: 90%;
-  width: 50%;
-  border: 2px solid grey;
+
+.individual_pet img {
+  height: 80%;
+  width: 100%;
+}
+
+.individual_pet span {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-evenly;
+  padding-left: 10px;
 }
-.logIn h2{
+
+.individual_pet span .pet-id {
+  margin: 0;
+  margin-left: 40px;
+  /* color: aqua; */
+}
+
+.individual_pet span h4 {
+  margin-top: 0px;
+  /* margin-left: 40px; */
+}
+
+.individual_pet h5 {
+  margin-top: 0px;
+  margin-left: 10px;
+}
+
+#search_bar{
+height: 7em;
+width: 100%;
+background-color: rgb(205, 207, 207);
+position: relative;
+display: flex;
+align-items: center;
+}
+
+#search_bar #search_span{
+position: absolute;
+right: 1em;
+}
+
+#search_span input{
+border: none;
+font-size: 18px;
+padding: 10px;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px; 
+ }
+
+#search_span input:focus{
+outline: none;
+}
+
+#search_span select{
+  font-size: 15px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+
+#search_span button{
+background-color: rgb(237, 4, 43);
+border: none;
+/* height: 3em; */
+width: 7em;
+color: #fff;
+padding: 10px;
+font-size: 18px;
+border-top-right-radius: 10px;
+cursor: pointer;
+border-bottom-right-radius: 10px;
+transition: .3s;
+ }
+
+#search_span button:hover{
+  background-color: rgb(164, 2, 29);
+}
+
+#back_btn{
+  cursor: pointer;
+  font-size: 22px;
+  border: none;
+  padding: 5px 30px;
+  margin-left: 2em;
+  border-radius: 10px;
+}
+
+#login_form{
+  height: auto;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 4em;
+  box-shadow: rgba(0, 0, 0, 0.34) 0px 3px 8px;
+  box-sizing: border-box;
+  padding:0em 2em;
+  padding-bottom: 2em;
+}
+
+#login_form h1{
   text-align: center;
 }
-.logIn form{
-  width: 70%;
-  height: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.logIn form input{
-  display: block;
-  width: 100%;
-  height:  2rem;
-  outline: none;
-  margin: 5px 0;
-  border-radius: 5px;
-  padding: 0 5px;
-}
-.logIn form button{
-  width: 100%;
-  height: 2rem;
-  cursor: pointer;
-}
-/* signup */
-.signup-container {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+#login_form label{
+margin-bottom: 10px;
+font-size: 19px;
+color: grey;
 }
 
-.signup-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f2f2f2;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
-  width: 400px;
-}
-
-.signup-form label {
-  display: block;
+#login_form input{
   margin-bottom: 10px;
-}
-
-.signup-form input[type="email"],
-.signup-form input[type="password"] {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.signup-form button[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 8px 16px;
+  font-size: 18px;
+  padding: 10px;
   border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 0.2s;
+  border-bottom: 1px solid #444;
 }
 
-.signup-form button[type="submit"]:hover {
-  background-color: #3e8e41;
+#login_form input:focus{
+outline: none;
+}
+
+#login_form h4{
+color: black;
+font-weight: 400;
+}
+
+#login_form h4 span{
+  color: rgb(222, 18, 18);
+  margin-left: 10px;
+  }
+
+#login_form button{
+  margin-top: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  background-color: rgb(237, 4, 43);
+  transition: .3s;
+}
+
+#login_form button:hover{
+  background-color: rgb(164, 2, 29);
 }
 .card {
   width: 24em;
@@ -102,6 +172,7 @@
        margin-top: 2em;       
  }
  
+ 
  .container{
   font-family: "Times New Roman", Times, serif;
   display: grid;
@@ -109,11 +180,3 @@
   gap: 0px;
   justify-content: space-between;
  }
-
-
-/* Media queries
-@media screen and (max-width: 480px) {
-  .signup-form {
-    width: 90%;
-  }
-} */

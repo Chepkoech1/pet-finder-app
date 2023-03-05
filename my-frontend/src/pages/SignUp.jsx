@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+ const [username, setUsername] = useState('');
   const handleSubmit = (event) => {
     event.preventDefault();
     // Do something with email and password, e.g. send them to the server
@@ -12,6 +12,7 @@ const SignUp = () => {
     // Reset form fields
     setEmail('');
     setPassword('');
+    setUsername('');
   };
 
   const handleEmailChange = (event) => {
@@ -21,11 +22,20 @@ const SignUp = () => {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-
+  
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
   return (
     <div className = "signup-container">
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
+        <label>
+          Username:
+          <input type="username" value={username} onChange={handleUsernameChange} required>
+            
+          </input>
+        </label>
         <label>
           Email:
           <input type="email" value={email} onChange={handleEmailChange} required />
@@ -43,4 +53,5 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
 

@@ -1,46 +1,72 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import '../App.css'
+import { useState } from "react";
+import { Redirect } from 'react-router-dom';
 
-let json = {};
-const LogIn = () => {
-  const [details, setDetails] = useState(json);
+function Login() {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleLogIn = (e)=> {
-    e.preventDefault();
-    fetch('/logIn', {
-        method: "POST",
-        body: JSON.stringify(details),
-        headers: {
-            "Content-Type": "Application/json"
+    let [email, setEmail] = useState("");
+    let [password, setPassword] = useState("");
+
+    let handleLogin = () => {
+        let responseObj = {
+          email,
+          password,
+        };
+        console.log(responseObj);
+        if (responseObj.email !== null && responseObj.password !== null) {
+          fetch("https://pet-finder-q9h3.onrender.com/login", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(responseObj),
+          }).then((response) => {
+            console.log(response);
+            if (response.status !== 200) {
+              alert("error")
+            }
+            else if (response.status === 200){
+              alert("success")
+              setIsLoggedIn(true);
+            }
+          });
+        } else {
+          console.log("error");
         }
-    })
-    .then(res => res.json())
-    .then(res => console.log(res))
+      }
 
-    console.log("data submited")
-  }
+      if (isLoggedIn) {
+        return <Redirect to="/pets" />;
+      }
 
-  const handleDetails = (e)=>{
-    let key = e.target.name;
-    let value = e.target.value;
-    json[key] = value;
-    setDetails(json);
-    console.log(details);
-
-  }
-
-  return (
-    <section className='logIn'>
-        <h2>Log In to upload your pets</h2>
-        <form action="#" onSubmit={handleLogIn}>
-            <input type="email" name='Email' placeholder='Enter Email address' onChange={handleDetails}/>
-            <input type="password" name='Password' placeholder='Enter Password' onChange={handleDetails}/>
-            <button  type='submit'>Log In</button>
+    return ( 
+        <>
+        <form id="login_form">
+         <h1>Login</h1>
+         <label>Email</label>
+         <input
+          onChange={(e) => {
+          setEmail(e.target.value);
+          }}
+          type="email"
+          value={email}
+          ></input>
+         <label>Password</label>
+         <input
+          onChange={(e) => {
+          setPassword(e.target.value);
+          }}
+          type="password"></input>
+         <button onClick={(e)=>{
+            e.preventDefault();
+            handleLogin();
+         }}>Login</button>
+         <h4>Don't have an account yet ?<span>sign up</span></h4>
         </form>
-        <p>Do not have an account yet?<Link to="/signup">Sign Up</Link></p>
-
-    </section>
-  )
+        </>
+     );
 }
 
-export default LogIn
+export default Login;

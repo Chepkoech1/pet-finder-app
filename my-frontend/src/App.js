@@ -1,18 +1,22 @@
-import { Route, Routes } from 'react-router-dom';
+import { Switch,Route } from 'react-router-dom';
 import './App.css';
-import LogIn from './pages/LogIn';
-import SignUp from './pages/SignUp';
-// import Dashboard from './pages/Dashboard';
-import AllPets from './Pets/Pet';
+import Login from './pages/LogIn';
+// import Pets from './pets/pets';
+import Pets from './Pets/Pet';
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<LogIn />}/>
-      <Route path='/signUp' element={<SignUp />}/>
-      {/* <Route path='/dashboard' element={<Dashboard />}/> */}
-      <Route path='/dashboard' element={<AllPets/>}/>
-    </Routes>
+    <div className="App">
+      <Switch>
+      <Route path='/login'>
+          <Login/>
+        </Route>
+        <Route path='/pets'>
+          <Pets/>
+        </Route>
+
+      </Switch>
+    </div>
   );
 }
 
