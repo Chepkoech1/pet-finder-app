@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
 }
 /* Log In */
 .logIn{
@@ -97,3 +98,41 @@
     width: 90%;
   }
 } */
+=======
+}
+/* Log In */
+.logIn{
+  height: 90%;
+  width: 50%;
+  border: 2px solid grey;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.logIn h2{
+  text-align: center;
+}
+.logIn form{
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logIn form input{
+  display: block;
+  width: 100%;
+  height:  2rem;
+  outline: none;
+  margin: 5px 0;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+.logIn form button{
+  width: 100%;
+  height: 2rem;
+  cursor: pointer;
+}
+>>>>>>> 18ef7cfa5f1197bc769ddd494f9040939a1efbab
