@@ -1,5 +1,9 @@
 source "https://rubygems.org"
-   ruby "2.7.4"
+    # ruby "2.7.4"
+gem "bcrypt", "~> 3.1"
+
+gem "puma", "~> 6.1"
+
 # A DSL for quickly creating web applications
 # https://github.com/sinatra/sinatra
 gem "sinatra", "~> 2.1"
@@ -51,6 +55,3 @@ group :test do
   gem "rspec-json_expectations", "~> 2.2"
 end
 
-gem "bcrypt", "~> 3.1"
-
-gem "puma", "~> 6.1"
