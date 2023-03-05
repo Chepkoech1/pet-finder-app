@@ -1,17 +1,16 @@
-
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Route, Routes} from 'react-router-dom';
-import LoginForm from './components/LoginForm'
+import LogIn from './pages/LogIn';
+import SignUp from './pages/SignUp';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
-    
-    <main>
-     <Routes>
-      <Route path='/' element={LoginForm}/>
-     </Routes>
-    </main>
-    
+    <Routes>
+      <Route path='/' element={<LogIn />}/>
+      <Route path='/signUp' element={<SignUp />}/>
+      <Route path='/dashboard' element={<Dashboard />}/>
+    </Routes>
   );
 }
 
