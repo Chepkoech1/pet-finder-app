@@ -228,6 +228,59 @@ font-weight: 400;
   line-height: 1.5;
   margin: 0 auto;
 }
+.individual_pet {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 2px #ccc;
+}
+
+.individual_pet img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.individual_pet span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.individual_pet h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.individual_pet .pet-id {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.individual_pet h5 {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+#iconsSpan {
+  margin-left: auto;
+}
+
+#iconsSpan i {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: #aaa;
+  cursor: pointer;
+}
+
+#iconsSpan i:hover {
+  color: #000;
+}
 
  /* .landingpagebtn{
   height: auto;
