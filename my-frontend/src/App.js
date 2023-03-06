@@ -18,6 +18,7 @@ function App() {
         </Route>
         <Route exact path='/'><LandingPage/></Route>
         <Route path='/sign-up'><SignUp/></Route>
+      
 
       </Switch>
     </div>

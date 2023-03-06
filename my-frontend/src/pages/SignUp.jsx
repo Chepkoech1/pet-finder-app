@@ -38,7 +38,7 @@ export default function SignUp() {
   };
 
   return (
-    <div className="card " style={{display:"flex" , flexDirection:"column" , margin: "4em"}}>
+    <div className="card" style={{display:"flex" , flexDirection:"column" , margin: "4em"}}>
       <form onSubmit={handleSubmit}>
         <label>USERNAME:</label>
         <input
