@@ -22,7 +22,7 @@
 
   - Start the development server:
 
-        `npm start`
+       `npm start`
 
 # Usage
 
