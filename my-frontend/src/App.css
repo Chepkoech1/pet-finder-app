@@ -179,49 +179,54 @@ font-weight: 400;
   gap: 0px;
   justify-content: space-between;
  }
-
- /* CSS Styles File */
-
-.Landingpage {
+ .Landingpage {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100vh;
-  background-color: #f5f5f5;
 }
 
 .landingpagebtn {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .btn-1,
 .btn-2 {
-  padding: 10px 20px;
   border: none;
+  padding: 10px 20px;
+  margin: 10px;
   border-radius: 5px;
+  color: white;
   font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-1 {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #4682b4;
+}
+
+.btn-1:hover {
+  background-color: #2f4f4f;
 }
 
 .btn-2 {
-  background-color: #fff;
-  color: #007bff;
+  background-color: #20b2aa;
 }
 
-h1 {
-  font-size: 36px;
-  font-weight: bold;
+.btn-2:hover {
+  background-color: #008080;
+}
+
+.paragraph {
+  max-width: 600px;
   text-align: center;
-  margin: 50px 0;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0 auto;
 }
 
  /* .landingpagebtn{
